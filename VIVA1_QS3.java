@@ -47,11 +47,9 @@ public static void main(String[] args) {
             System.out.println("\nThe factors is : ");  
         for (  i=1;i<=digit; i++){
             if ( digit%i ==0){
-               if(!comma){
+             System.out.print(i);
+                if(i<digit)
                     System.out.print(", ");
-               }
-                System.out.print(i);
-                comma=false;
                 sum+=i;
             }
         }    
