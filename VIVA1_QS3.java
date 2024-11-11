@@ -11,54 +11,60 @@ import java.util.Scanner;
  * @author tenzo
  */
 public class VIVA1_QS3 {
-
+ 
+public static void main(String[] args) {
     
-    public static void main(String[] args) {
-       
-         
-        Scanner s= new Scanner(System.in);
-        int flag=0, count=0, i,list=0;
-        long sum =0,m, product=1;
+   Scanner s= new Scanner(System.in);
+        int flag=0, count=0, i,list=0,sum =0,m;
+        long  product=1;
         boolean productOverflow = false, comma=true;
         
         System.out.print("enter a digit: ");
         long digit = s.nextLong();
        
         if(digit<=1)
-            System.out.println(digit+" is not a prime number");
+            System.out.println("Please enter integer greater than 1");
     else{
               
         for ( m=2;m<=digit/2;m++){
-            if(digit%m==0) {
-                System.out.println(digit+" is a not prime number");
+            if(digit%m==0) {  
                 flag=1;
                 break;
             }
         }
-            if(flag==0)
+            if(flag==0){
                 System.out.println(digit+" is a prime number");
+                return;
+            }else{
+                System.out.println(digit+" is a not prime number");
+            }
             
         for (  i=1;i<=digit; i++){
             if ( digit%i ==0)
                 count++;}
-                    System.out.print("It has "+count+" factors");
+                 System.out.print("It has "+count+" factors");
          
-              System.out.println("\nThe factors is : ");  
+            System.out.println("\nThe factors is : ");  
         for (  i=1;i<=digit; i++){
             if ( digit%i ==0){
+               if(!comma){
+                    System.out.print(", ");
+               }
                 System.out.print(i);
-                if(i<digit){
-                    System.out.print(", ");} 
-            sum+=i; 
-                if(product>=Long.MAX_VALUE/i){
+                comma=false;
+                sum+=i;
+            }
+        }    
+             for (  i=1;i<=digit; i++){
+               if ( digit%i ==0)  
+             if(product>=Integer.MAX_VALUE/i){
                     productOverflow = true;
                         break;}
                         else
                           product*=i;
             }
-        }
-           
-              System.out.print("\nThe sum of factors is : " + sum);
+        
+                System.out.print("\nThe sum of factors is : " + sum);
             if (productOverflow)
                 System.out.println("\nThe prouct is too large to display");
                 else
@@ -69,9 +75,7 @@ public class VIVA1_QS3 {
             }   else{
                     System.out.println(digit+" is not a perfect number");
             }
-            
-          if( digit%m==0 || digit<=1 ){ 
-            System.out.println("Prime numbers between 2 and " + digit+" is :");
+                System.out.println("Prime numbers between 2 and " + digit+" is :");
         while(list<digit){
             flag=0;
             for ( m=2;m<=list/2;m++){
@@ -89,7 +93,7 @@ public class VIVA1_QS3 {
           } 
         }
     }
-}
+
         
           
         
