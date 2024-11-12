@@ -23,7 +23,7 @@ public class Viva1q5 {
             count=out.split("\\s").length;
             
             if(count!=0){
-                System.out.println("original: "+out);
+                System.out.println("original:"+out);
                 break;
             }
             else{
