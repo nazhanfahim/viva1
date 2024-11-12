@@ -7,20 +7,21 @@ public class V1q2 {
         int nnn,aaa,bbb; //initialize three integers that will be used for the operations
         int step=0; //start the count for steps needed
         
+        System.out.println("Enter a number, n (1-1000000000)");
         nnn=kb.nextInt(); // input the number nnn
         
         while(nnn<1||nnn>Math.pow(10,9)){ //use while for looping until we get the integer that follows the constraint
             System.out.println("error"); 
             nnn=kb.nextInt();
         }
-        
+        System.out.println("Enter a number, a (1-n)");
         aaa=kb.nextInt();
         
         while(aaa<1||aaa>nnn){ //use while for looping until we get the integer that follows the constraint
             System.out.println("error");
             aaa=kb.nextInt();
         }
-        
+        System.out.println("Enter a number, b (2-100000)");
         bbb=kb.nextInt();
         
         while(bbb<1||bbb>Math.pow(10,5)){ //use while for looping until we get the integer that follows the constraint
@@ -38,16 +39,8 @@ public class V1q2 {
             step++; //+1 step if there is a subtraction occurs
         }
         
-        /**while(true){   alternative
-            nnn-=aaa;
-            step++;
-            if(nnn<=1){ immediately end the loop if its smaller than one
-                break;
-            }
-        }*/
-        
         if(nnn==1){ //if its possible to have 1 in the end, print the number of steps
-            System.out.println(step);
+            System.out.println("Steps="+step);
         }
         else{
             System.out.println("-1");
