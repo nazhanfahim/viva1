@@ -14,6 +14,7 @@ public class Viva1q5 {
     Scanner keyboard=new Scanner(System.in);
     String in,out;
     int count;
+        while(true){
         System.out.print("Please enter remix: ");
         in=keyboard.nextLine();
         
@@ -23,9 +24,12 @@ public class Viva1q5 {
             
             if(count!=0){
                 System.out.println("original: "+out);
+                break;
             }
             else{
                 System.out.println("Please enter a remix with at least one word in it!");
+                System.out.println();
             }
     }
+}
 }
