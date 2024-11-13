@@ -18,10 +18,9 @@ public class viva1Q4 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int optionmainmenu,optionpizza,optiondrinks, optiondessert, total; 
-        double newtotal;
-        total=0;
-        newtotal=0;
+        int optionmainmenu,optionpizza,optiondrinks, optiondessert; 
+        double total=0;
+        
         int counterpizza,counterdrinks,counterdessert;
         counterpizza=0;
         counterdrinks=0;
@@ -197,8 +196,8 @@ public class viva1Q4 {
                    
             System.out.printf("Your total is:RM %.2f%n",(double)total);
             System.out.println("You've availed the One-of-each offer. You got a 20% discount!"); 
-            newtotal=total*80/100.0;
-            System.out.printf("Your new total is:RM %.2f%n",(double)newtotal);
+            total=total*80/100.0;
+            System.out.printf("Your new total is:RM %.2f%n",(double)total);
             System.out.println("");
             System.out.println("Thank you for your order. Have a nice day!");
             
