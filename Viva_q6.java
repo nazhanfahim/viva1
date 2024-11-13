@@ -24,9 +24,10 @@ public class Viva_q6 {
         int sum = 0, count_highest = 1, count_sec_highest = 1;
         boolean negative = false;
         
+        System.out.print("Enter numbers: ");
+        
         while (true) {
             //ask for score until get 0
-            System.out.print("Enter numbers: ");
             score = s.nextInt();
             if (score == 0) {
                 break;
