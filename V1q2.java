@@ -44,7 +44,6 @@ public class V1q2 {
                     break; //stops the while loop if its already 1 or less
                 }
             }
-            
         }
         
         if(nnn==1){ //if its possible to have 1 in the end, print the number of steps
