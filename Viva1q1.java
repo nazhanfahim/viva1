@@ -15,17 +15,15 @@ public class Viva1q1 {
     int num,sum;
         System.out.print("Enter a number: ");
         num=keyboard.nextInt();
-        while(true){
+        
         sum=(num/10)+(num%10);
         while(sum>9){
             sum=(sum/10)+(sum%10);
-        }
-        
-        
-        if (sum<10){
+            if (sum<10){
             break;
+            }
         }
+         System.out.println("Sum of digits until single digit: "+sum);
         }
-        System.out.println("Sum of digits until single digit: "+sum);
-    }
+         
 }
