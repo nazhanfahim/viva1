@@ -64,7 +64,7 @@ public static void main(String[] args) {
         
                 System.out.print("\nThe sum of factors is : " + sum);
             if (productOverflow)
-                System.out.println("\nThe prouct is too large to display");
+                System.out.println("\nThe product is too large to display");
                 else
                     System.out.println("\nThe product is: "+ product);
           
