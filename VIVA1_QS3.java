@@ -12,16 +12,16 @@ import java.util.Scanner;
  */
 public class VIVA1_QS3 {
  
-public static void main(String[] args) {
+ public static void main(String[] args) {
        
          
-         Scanner s= new Scanner(System.in);
+        Scanner s= new Scanner(System.in);
         int flag=0, count=0, i,list=0,sum =0,m;
-        long  product=1;
+        int product=1;
         boolean productOverflow = false, comma=true;
         
         System.out.print("enter a digit: ");
-        long digit = s.nextLong();
+        int digit = s.nextInt();
        
         if(digit<=1)
             System.out.println("Please enter integer greater than 1");
@@ -29,12 +29,15 @@ public static void main(String[] args) {
               
         for ( m=2;m<=digit/2;m++){
             if(digit%m==0) {  
-                System.out.println(digit+" is a not prime number");
+                flag=1;
                 break;
-             }else if(flag==0){
+            }
+        }
+            if(flag==0){
                 System.out.println(digit+" is a prime number");
                 return;
-            }
+            }else{
+                System.out.println(digit+" is a not prime number");
             }
             
         for (  i=1;i<=digit; i++){
@@ -54,16 +57,16 @@ public static void main(String[] args) {
              for (  i=1;i<=digit; i++){
                if ( digit%i ==0)  
              if(product>=Integer.MAX_VALUE/i){
-                    productOverflow = true;
-                        break;}
-                        else
+                    productOverflow=false;
+                    break;}
+                      else
                           product*=i;
             }
         
                 System.out.print("\nThe sum of factors is : " + sum);
-            if (productOverflow)
+           if (productOverflow)
                 System.out.println("\nThe product is too large to display");
-                else
+               else
                     System.out.println("\nThe product is: "+ product);
           
             if(sum-digit==digit){
@@ -76,7 +79,8 @@ public static void main(String[] args) {
             flag=0;
             for ( m=2;m<=list/2;m++){
                 if(list%m==0) {
-                    flag=1;}}
+                    flag=1;
+                        break;}}
             if(flag==0 && list>1){
                 if(!comma){
                 System.out.print(", ");
