@@ -13,8 +13,9 @@ import java.util.Scanner;
 public class VIVA1_QS3 {
  
 public static void main(String[] args) {
-    
-   Scanner s= new Scanner(System.in);
+       
+         
+         Scanner s= new Scanner(System.in);
         int flag=0, count=0, i,list=0,sum =0,m;
         long  product=1;
         boolean productOverflow = false, comma=true;
@@ -28,15 +29,12 @@ public static void main(String[] args) {
               
         for ( m=2;m<=digit/2;m++){
             if(digit%m==0) {  
-                flag=1;
+                System.out.println(digit+" is a not prime number");
                 break;
-            }
-        }
-            if(flag==0){
+             }else if(flag==0){
                 System.out.println(digit+" is a prime number");
                 return;
-            }else{
-                System.out.println(digit+" is a not prime number");
+            }
             }
             
         for (  i=1;i<=digit; i++){
@@ -78,8 +76,7 @@ public static void main(String[] args) {
             flag=0;
             for ( m=2;m<=list/2;m++){
                 if(list%m==0) {
-                    flag=1;
-                        break;}}
+                    flag=1;}}
             if(flag==0 && list>1){
                 if(!comma){
                 System.out.print(", ");
@@ -91,6 +88,7 @@ public static void main(String[] args) {
           } 
         }
     }
+
 
         
           
