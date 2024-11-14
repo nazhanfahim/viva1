@@ -58,7 +58,7 @@ public static void main(String[] args) {
                           product*=i;
             }
                  System.out.print("\nThe sum of factors is : " + sum);
-            if (productOverflow)
+            if (productOverflow==true)
                 System.out.println("\nThe product is too large to display");
                 else
                     System.out.println("\nThe product is: "+ product);
@@ -85,6 +85,7 @@ public static void main(String[] args) {
           } 
         }
     }
+
 
         
           
