@@ -24,7 +24,7 @@ public static void main(String[] args) {
         long digit = s.nextLong();
        
         if(digit<=1)
-            System.out.println("Please enter integer greater than 1");
+            System.out.println("Please enter a integer greater than 1");
     else{
               
         for ( m=2;m<=digit/2;m++)
@@ -40,7 +40,7 @@ public static void main(String[] args) {
                 count++;}
                  System.out.print("It has "+count+" factors");
          
-            System.out.println("\nThe factors is : ");  
+            System.out.println("\nThe factors are : ");  
         for (  i=1;i<=digit; i++){
             if ( digit%i ==0){
              System.out.print(i);
@@ -68,7 +68,7 @@ public static void main(String[] args) {
             }   else{
                     System.out.println(digit+" is not a perfect number");
             }
-            System.out.println("Prime numbers between 2 and " + digit+" is :");
+            System.out.println("Prime numbers between 2 and " + digit+" are :");
         while(list<digit){
             flag=0;
             for ( m=2;m<=list/2;m++){
