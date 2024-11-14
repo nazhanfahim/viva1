@@ -2,55 +2,83 @@ package com.mycompany.v1q2;
 import java.util.Scanner; //load Scanner Class into java program
 public class V1q2 {
 
-    public static void main(String[] args) {
-        Scanner kb= new Scanner(System.in);
-        int nnn,aaa,bbb; //initialize three integers that will be used for the operations
-        int step=0; //start the count for steps needed
+   public static void main(String[] args) {
+       
+         
+        Scanner s= new Scanner(System.in);
+        int flag=0, count=0, i,list=0,sum =0,m;
+        int product=1;
+        boolean productOverflow = false, comma=true;
         
-        System.out.println("Enter a number, n (1-1000000000)");
-        nnn=kb.nextInt(); // input the number nnn
-        
-        while(nnn<1||nnn>Math.pow(10,9)){ //use while for looping until we get the integer that follows the constraint
-            System.out.println("Error. Please enter another number."); 
-            nnn=kb.nextInt();
-        }
-        System.out.println("Enter a number, a (1-n)");
-        aaa=kb.nextInt();
-        
-        while(aaa<1||aaa>nnn){ //use while for looping until we get the integer that follows the constraint
-            System.out.println("Error. Please enter another number.");
-            aaa=kb.nextInt();
-        }
-        System.out.println("Enter a number, b (2-100000)");
-        bbb=kb.nextInt();
-        
-        while(bbb<1||bbb>Math.pow(10,5)){ //use while for looping until we get the integer that follows the constraint
-            System.out.println("Error. Please enter another number.");
-            bbb=kb.nextInt();
-        }
-        
-        while (true){ //while loop for operations
-            if(nnn%bbb==0){ //check if n is divisible by b
-                nnn/=bbb; //divide n with b
-                step++; //+1 step if there is a division occurs
-                if(nnn<=1){ 
-                    break; //stops the while loop if its already 1 or less
-                }
-            }
-            else{
-                nnn-=aaa; //n minus a
-                step++; //+1 step if there is a subtraction occurs
-                if(nnn<=1){
-                    break; //stops the while loop if its already 1 or less
-                }
+        System.out.print("enter a digit: ");
+        int digit = s.nextInt();
+       
+        if(digit<=1)
+            System.out.println("Please enter integer greater than 1");
+    else{
+              
+        for ( m=2;m<=digit/2;m++){
+            if(digit%m==0) {  
+                flag=1;
+                break;
             }
         }
+            if(flag==0){
+                System.out.println(digit+" is a prime number");
+                return;
+            }else{
+                System.out.println(digit+" is a not prime number");
+            }
+            
+        for (  i=1;i<=digit; i++){
+            if ( digit%i ==0)
+                count++;}
+                 System.out.print("It has "+count+" factors");
+         
+            System.out.println("\nThe factors is : ");  
+        for (  i=1;i<=digit; i++){
+            if ( digit%i ==0){
+             System.out.print(i);
+                if(i<digit)
+                    System.out.print(", ");
+                sum+=i;
+            }
+        }    
+             for (  i=1;i<=digit; i++){
+               if ( digit%i ==0)  
+             if(product>=Integer.MAX_VALUE/i){
+                    productOverflow=false;
+                    break;}
+                      else
+                          product*=i;
+            }
         
-        if(nnn==1){ //if its possible to have 1 in the end, print the number of steps
-            System.out.println("Step(s): "+step);
+                System.out.print("\nThe sum of factors is : " + sum);
+           if (productOverflow)
+                System.out.println("\nThe product is too large to display");
+               else
+                    System.out.println("\nThe product is: "+ product);
+          
+            if(sum-digit==digit){
+                System.out.println(digit+" is a perfect number");
+            }   else{
+                    System.out.println(digit+" is not a perfect number");
+            }
+                System.out.println("Prime numbers between 2 and " + digit+" is :");
+        while(list<digit){
+            flag=0;
+            for ( m=2;m<=list/2;m++){
+                if(list%m==0) {
+                    flag=1;
+                        break;}}
+            if(flag==0 && list>1){
+                if(!comma){
+                System.out.print(", ");
+            }
+                System.out.print(list);
+                comma=false;
+            }
+                list++;} 
+          } 
         }
-        else{
-            System.out.println("-1");
-        }
-        }
-        }
+    }
